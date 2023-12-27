@@ -1,3 +1,4 @@
+using BlazorChat_SignalR.Server.Hubs;
 using Microsoft.AspNetCore.ResponseCompression;
 
 namespace BlazorChat_SignalR
@@ -12,8 +13,16 @@ namespace BlazorChat_SignalR
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
+            builder.Services.AddSignalR();
+            builder.Services.AddResponseCompression(options =>
+                options.MimeTypes = ResponseCompressionDefaults
+                .MimeTypes
+                .Concat(new[] {"application/octet-streeam"})
+                ); 
 
             var app = builder.Build();
+
+            app.UseResponseCompression();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -37,6 +46,7 @@ namespace BlazorChat_SignalR
 
             app.MapRazorPages();
             app.MapControllers();
+            app.MapHub<ChatHub>("/chathub");
             app.MapFallbackToFile("index.html");
 
             app.Run();
