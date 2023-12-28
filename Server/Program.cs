@@ -17,7 +17,7 @@ namespace BlazorChat_SignalR
             builder.Services.AddResponseCompression(options =>
                 options.MimeTypes = ResponseCompressionDefaults
                 .MimeTypes
-                .Concat(new[] {"application/octet-streeam"})
+                .Concat(new[] {"application/octet-stream"})
                 ); 
 
             var app = builder.Build();
