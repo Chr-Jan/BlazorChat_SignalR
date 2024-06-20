@@ -19,3 +19,5 @@ This repository contains a chat application implemented using Blazor and SignalR
 ### Resources
 
 - Official Microsoft ASP.NET Core SignalR documentation: [SignalR with Blazor](https://learn.microsoft.com/en-us/aspnet/core/blazor/tutorials/signalr-blazor?view=aspnetcore-8.0&tabs=visual-studio)
+
+<img src="github_images/SignalR.png">
