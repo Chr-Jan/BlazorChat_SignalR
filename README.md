@@ -1,6 +1,6 @@
 # BlazorChat_SignalR
 
-A simple chat application built with Blazor and SignalR.
+A chat application built with Blazor and SignalR.
 
 ## NuGet Packages
 
